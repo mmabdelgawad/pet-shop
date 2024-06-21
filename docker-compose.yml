@@ -1,0 +1,42 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: docker/app/Dockerfile
+    image: petshop_app
+    ports:
+      - "9000:9000"
+    container_name: petshop_app
+    restart: unless-stopped
+    working_dir: /var/www/
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www
+
+  db:
+    image: mysql:8.0
+    container_name: petshop_db
+    restart: unless-stopped
+    env_file:
+      - docker/db/development.env
+    volumes:
+      - db:/var/lib/mysql
+
+  nginx:
+    image: nginx:alpine
+    container_name: petshop_nginx
+    restart: unless-stopped
+    depends_on:
+      - db
+      - app
+    ports:
+      - '80:80'
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+
+volumes:
+  db:
