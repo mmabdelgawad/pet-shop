@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Auth;
 
 use App\Actions\Auth\LoginAction;
 use App\Exceptions\Auth\AuthException;
