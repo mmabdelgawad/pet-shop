@@ -198,6 +198,13 @@ return [
                     'in' => 'header', // The location of the API key. Valid values are "query" or "header".
                 ],
                 */
+                'bearer_token' => [
+                    'type' => 'http',
+                    'scheme' => 'bearer',
+                    'description' => 'Bearer token authentication',
+                    'name' => 'Authorization',
+                    'in' => 'header',
+                ],
             ],
             'security' => [
                 /*
