@@ -2,7 +2,7 @@
 
 namespace App\Actions\Auth;
 
-readonly class LogoutAction
+class LogoutAction
 {
     public function handle(): void
     {

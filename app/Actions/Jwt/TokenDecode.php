@@ -7,7 +7,7 @@ use Exception;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-readonly class TokenDecode
+class TokenDecode
 {
     /**
      * @param string $token

@@ -4,7 +4,7 @@ namespace App\Actions\Jwt;
 
 use App\Models\User;
 
-readonly class StoreUserJwtToken
+class StoreUserJwtToken
 {
     /**
      * @param User $user

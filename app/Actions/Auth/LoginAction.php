@@ -8,7 +8,7 @@ use App\Exceptions\Auth\AuthException;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-readonly class LoginAction
+class LoginAction
 {
     public function __construct(
         private TokenEncode $tokenEncode,

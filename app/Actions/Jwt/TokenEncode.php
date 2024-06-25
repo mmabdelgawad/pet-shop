@@ -4,7 +4,7 @@ namespace App\Actions\Jwt;
 
 use Firebase\JWT\JWT;
 
-readonly class TokenEncode
+class TokenEncode
 {
     /**
      * @param string $userUuid
