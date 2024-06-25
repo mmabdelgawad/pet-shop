@@ -15,7 +15,7 @@ class ListCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'limit' => ['nullable', 'integer', 'max:30'],
+            'limit' => ['nullable', 'integer', 'max:20'],
             'sortBy' => ['nullable', new CheckTableColumn('categories')],
             'sort' => ['required_with:sortBy', 'in:asc,desc'],
         ];

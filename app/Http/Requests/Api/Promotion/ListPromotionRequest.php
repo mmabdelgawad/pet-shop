@@ -15,7 +15,7 @@ class ListPromotionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'limit' => ['nullable', 'integer', 'max:30'],
+            'limit' => ['nullable', 'integer', 'max:20'],
             'sortBy' => ['nullable', new CheckTableColumn('promotions')],
             'sort' => ['required_with:sortBy', 'in:asc,desc'],
             'valid' => ['nullable', 'boolean'],
