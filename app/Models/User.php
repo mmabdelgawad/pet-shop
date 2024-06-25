@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @method static \Illuminate\Database\Eloquent\Relations\HasMany tokens()
+ * @method static \Illuminate\Database\Eloquent\Relations\HasMany orders()
  */
 class User extends Authenticatable
 {
@@ -63,5 +64,13 @@ class User extends Authenticatable
     public function tokens(): HasMany
     {
         return $this->hasMany(JwtToken::class);
+    }
+
+    /**
+     * @return HasMany<Order>
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
     }
 }

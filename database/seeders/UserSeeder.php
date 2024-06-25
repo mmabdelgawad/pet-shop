@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -12,7 +13,9 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(1)->create([
+        User::factory(1)->has(
+            Order::factory()->count(3)
+        )->create([
             'first_name' => 'buckhill',
             'last_name' => 'petshop',
             'email' => 'petshop@buckhill.com',
@@ -23,6 +26,9 @@ class UserSeeder extends Seeder
             'is_marketing' => 0,
         ]);
 
-        User::factory(10)->create();
+        User::factory(10)
+            ->has(
+                Order::factory()->count(3)
+            )->create();
     }
 }
