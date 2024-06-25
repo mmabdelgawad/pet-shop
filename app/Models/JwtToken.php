@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @method static \Illuminate\Database\Eloquent\Relations\BelongsTo user()
+ */
+
 class JwtToken extends Model
 {
     use HasFactory;

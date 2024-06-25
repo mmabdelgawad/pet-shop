@@ -63,6 +63,7 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Relations\BelongsTo user()
  * @property int $id
  * @property int $user_id
  * @property string $unique_id
