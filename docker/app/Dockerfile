@@ -36,6 +36,12 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www
 
+# Install nodejs and npm
+RUN curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+RUN ["sh",  "./nodesource_setup.sh"]
+
+RUN apt-get -y install nodejs
+
 EXPOSE 9000
 
 CMD ["php-fpm"]
