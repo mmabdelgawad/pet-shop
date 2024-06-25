@@ -16,33 +16,23 @@ namespace App\Models{
  * 
  *
  * @property int $id
- * @property int $user_id
- * @property string $unique_id
- * @property string $token_title
- * @property string|null $restrictions
- * @property string|null $permissions
- * @property \Illuminate\Support\Carbon|null $expires_at
- * @property \Illuminate\Support\Carbon|null $last_used_at
- * @property \Illuminate\Support\Carbon|null $refreshed_at
+ * @property string $uuid
+ * @property string $title
+ * @property string $slug
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $user
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken query()
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereExpiresAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereLastUsedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken wherePermissions($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereRefreshedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereRestrictions($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereTokenTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereUniqueId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereUserId($value)
+ * @method static \Database\Factories\CategoryFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereUuid($value)
  */
-	class JwtToken extends \Eloquent {}
+	class Category extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -90,5 +80,39 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUuid($value)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $unique_id
+ * @property string $token_title
+ * @property string|null $restrictions
+ * @property string|null $permissions
+ * @property \Illuminate\Support\Carbon|null $expires_at
+ * @property \Illuminate\Support\Carbon|null $last_used_at
+ * @property \Illuminate\Support\Carbon|null $refreshed_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken query()
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereExpiresAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereLastUsedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken wherePermissions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereRefreshedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereRestrictions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereTokenTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereUniqueId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JwtToken whereUserId($value)
+ */
+	class JwtToken extends \Eloquent {}
 }
 
