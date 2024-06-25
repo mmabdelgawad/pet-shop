@@ -214,6 +214,52 @@
                     }
                 ]
             }
+        },
+        "/api/v1/user/orders": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Display user orders list",
+                "operationId": "listUserOrders",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "limit": {
+                                        "description": "Page limit",
+                                        "type": "string"
+                                    },
+                                    "page": {
+                                        "description": "Page number",
+                                        "type": "string"
+                                    },
+                                    "sortBy": {
+                                        "description": "Sort by",
+                                        "type": "string"
+                                    },
+                                    "sort": {
+                                        "description": "Sort type",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
         }
     },
     "components": {

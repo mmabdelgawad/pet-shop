@@ -97,6 +97,7 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Relations\BelongsTo user()
  * @method static \Illuminate\Database\Eloquent\Relations\BelongsTo orderStatus()
  * @method static \Illuminate\Database\Eloquent\Relations\BelongsTo payment()
  * @property int $id
