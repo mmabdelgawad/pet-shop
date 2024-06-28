@@ -19,9 +19,7 @@ class CheckTableColumn implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $databaseConnection = config('app.env') === 'testing' ? 'sqlite' : 'mysql';
-
-        if ( ! Schema::connection($databaseConnection)->hasColumn($this->tableName, $value)) {
+        if ( ! Schema::connection(config('database.default'))->hasColumn($this->tableName, $value)) {
             $fail("Column $value does not exist in $this->tableName table.");
         }
     }
