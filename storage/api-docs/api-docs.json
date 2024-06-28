@@ -5,6 +5,38 @@
         "version": "1.0"
     },
     "paths": {
+        "/api/v1/auth/forgot-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Handle forgot password action",
+                "operationId": "forgotPassword",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "description": "User email",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
         "/api/v1/auth/login": {
             "post": {
                 "tags": [
@@ -71,6 +103,53 @@
                         "bearer_token": []
                     }
                 ]
+            }
+        },
+        "/api/v1/auth/reset-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Handle reset password action",
+                "operationId": "resetPassword",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "token",
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "token": {
+                                        "description": "Password reset token",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "User email",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "New password",
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "description": "New password confirmation",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
             }
         },
         "/api/v1/brands": {
