@@ -1,3 +1,5 @@
 <template>
-    Petshop
+    <div>
+        <router-view />
+    </div>
 </template>

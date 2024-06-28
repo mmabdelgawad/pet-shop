@@ -20,7 +20,9 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^5.0.5",
         "flowbite": "^2.3.0",
+        "pinia": "^2.1.7",
         "vue": "^3.4.30",
-        "vue-router": "^4.4.0"
+        "vue-router": "^4.4.0",
+        "vue-yup-form": "^1.0.8"
     }
 }
