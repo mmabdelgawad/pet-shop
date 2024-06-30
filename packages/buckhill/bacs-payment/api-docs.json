@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Bacs Payment API Documentation",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/bacs": {
+            "post": {
+                "tags": [
+                    "Bacs Payment"
+                ],
+                "summary": "Handle bacs payment action",
+                "operationId": "bacs",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "vol.owner_id",
+                                    "vol.owner_id_no",
+                                    "hdr1.file_creation_date",
+                                    "hdr1.file_expiration_date"
+                                ],
+                                "properties": {
+                                    "vol.owner_id": {
+                                        "description": "Vol record (owner id)",
+                                        "type": "string"
+                                    },
+                                    "vol.owner_id_no": {
+                                        "description": "Vol record (owner id no)",
+                                        "type": "string"
+                                    },
+                                    "hdr1.file_creation_date": {
+                                        "description": "Hdr1 record (file creation date)",
+                                        "type": "string"
+                                    },
+                                    "hdr1.file_expiration_date": {
+                                        "description": "Hdr1 record (file expiration date)",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Validation errors"
+                    },
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        }
+    }
+}

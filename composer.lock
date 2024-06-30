@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75b7f906b5927775b720ad84e6826890",
+    "content-hash": "64da11d97a2f9f35cce12d594fa0064d",
     "packages": [
         {
             "name": "brick/math",
@@ -65,6 +65,43 @@
                 }
             ],
             "time": "2023-11-29T23:19:16+00:00"
+        },
+        {
+            "name": "buckhill/bacs-payment",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "packages/buckhill/bacs-payment",
+                "reference": "44bcd3d96c4631090dd6ecd4a39c7877957f36f2"
+            },
+            "require": {
+                "darkaonline/l5-swagger": "^8.6"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.1",
+                "pestphp/pest": "^2.34"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Buckhill\\BacsPayment\\BacsPaymentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Buckhill\\BacsPayment\\": "src/",
+                    "Buckhill\\BacsPayment\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Handling BACS response",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -9551,7 +9588,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "buckhill/bacs-payment": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

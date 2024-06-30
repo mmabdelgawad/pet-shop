@@ -1,0 +1,32 @@
+{
+    "name": "buckhill/bacs-payment",
+    "description": "Handling BACS response",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Buckhill\\BacsPayment\\": "src/",
+            "Buckhill\\BacsPayment\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Buckhill\\BacsPayment\\BacsPaymentServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34",
+        "orchestra/testbench": "^9.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "darkaonline/l5-swagger": "^8.6"
+    },
+    "minimum-stability": "beta"
+}
