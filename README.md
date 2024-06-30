@@ -9,8 +9,8 @@ Before cloning this repository, make sure you have docker installed on your mach
 
 ```bash
 cp .env.example .env
-php artisan key:generate
 composer install
+php artisan key:generate
 php artisan migrate --seed
 npm install
 ```
